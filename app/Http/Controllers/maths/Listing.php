@@ -55,6 +55,12 @@ class Listing extends ApiController
                 $query->where('tbl.type', $q);
             });
         }
+        if (isset($all['max'])) {
+            $q = $all['max'];
+            $model->where(function($query) use ($q) {
+                $query->where('tbl.max', $q);
+            });
+        }
         if (isset($all['subType'])) {
             $q = $all['subType'];
             $model->where(function($query) use ($q) {

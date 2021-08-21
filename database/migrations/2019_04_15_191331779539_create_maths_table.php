@@ -14,6 +14,7 @@ class CreateMathsTable extends Migration
             $table->text('name')->nullable();
             $table->text('type')->nullable();
             $table->text('subType')->nullable();
+            $table->text('max')->nullable();
             $table->text('correct')->nullable();
             $table->text('wrong')->nullable();
             $table->timestamps();
