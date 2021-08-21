@@ -5,6 +5,7 @@ namespace App\Http\Controllers\maths;
 use App\Http\Controllers\ApiController;
 use Illuminate\Http\Request;
 use App\Model\Maths as CurrentModel;
+use App\Model\Maths;
 use Illuminate\Support\Facades\DB ;
 
 class Listing extends ApiController
@@ -66,6 +67,11 @@ class Listing extends ApiController
             $model->where(function($query) use ($q) {
                 $query->where('tbl.subType', $q);
             });
+        }
+
+        if (isset($all['getPercentage'])) {
+           $percentage = $model->avg('tbl.correct');
+             return $this->responseJson(round($percentage, 2));
         }
         $model->selectRaw('tbl.*, tbl.created_at date');
         $model->orderBy($sort, $sortBy);
