@@ -1,14 +1,12 @@
 <?php
 
 namespace App\Model;
-use App\Scopes\StatusScope;
 use Illuminate\Database\Eloquent\Model;
-// use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Maths extends Model
 {
     // use SoftDeletes;
-    const TN = DB_TBL_PREFIX.'maths';
+    const TN = 'maths';
 
     protected $table = Self::TN;
 
