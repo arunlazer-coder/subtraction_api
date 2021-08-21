@@ -1,0 +1,15 @@
+[2021-07-31 14:22:05] local.ERROR: array_merge(): Expected parameter 2 to be an array, int given {"exception":"[object] (ErrorException(code: 0): array_merge(): Expected parameter 2 to be an array, int given at D:\\xampp\\htdocs\\financee\\finance\\vendor\\laravel\\framework\\src\\Illuminate\\Support\\ServiceProvider.php:63)
+[stacktrace]
+#0 [internal function]: Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError(2, 'array_merge(): ...', 'D:\\\\xampp\\\\htdocs...', 63, Array)
+#1 D:\\xampp\\htdocs\\financee\\finance\\vendor\\laravel\\framework\\src\\Illuminate\\Support\\ServiceProvider.php(63): array_merge(Array, 1)
+#2 D:\\xampp\\htdocs\\financee\\finance\\vendor\\fruitcake\\laravel-cors\\src\\CorsServiceProvider.php(20): Illuminate\\Support\\ServiceProvider->mergeConfigFrom('D:\\\\xampp\\\\htdocs...', 'cors')
+#3 D:\\xampp\\htdocs\\financee\\finance\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(616): Fruitcake\\Cors\\CorsServiceProvider->register()
+#4 D:\\xampp\\htdocs\\financee\\finance\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\ProviderRepository.php(75): Illuminate\\Foundation\\Application->register(Object(Fruitcake\\Cors\\CorsServiceProvider))
+#5 D:\\xampp\\htdocs\\financee\\finance\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(593): Illuminate\\Foundation\\ProviderRepository->load(Array)
+#6 D:\\xampp\\htdocs\\financee\\finance\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\RegisterProviders.php(17): Illuminate\\Foundation\\Application->registerConfiguredProviders()
+#7 D:\\xampp\\htdocs\\financee\\finance\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(219): Illuminate\\Foundation\\Bootstrap\\RegisterProviders->bootstrap(Object(Illuminate\\Foundation\\Application))
+#8 D:\\xampp\\htdocs\\financee\\finance\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(320): Illuminate\\Foundation\\Application->bootstrapWith(Array)
+#9 D:\\xampp\\htdocs\\financee\\finance\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(129): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#10 Command line code(1): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#11 {main}
+"} 
