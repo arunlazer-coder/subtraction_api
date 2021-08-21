@@ -35,6 +35,7 @@ class Create extends ApiController
                 'subType'       => 'required',
                 'correct'    => 'required',
                 'wrong'    => 'required',
+                'max'       => 'required'
             );
 
             $validator = Validator::make($inputs, $rules,  []);
@@ -43,7 +44,7 @@ class Create extends ApiController
                 $errors = ModelHelper::getValidatorErrors($validator);
             } else {
                 $model = new CurrentModel();
-                $model = Helper::dataForm($model, $inputs, ['name', 'type', 'subType', 'correct', 'wrong']);
+                $model = Helper::dataForm($model, $inputs, ['name', 'type', 'subType', 'max', 'correct', 'wrong']);
 
                 if ($model->save()) {
                         $msg = "data successfully added";
