@@ -70,8 +70,18 @@ class Listing extends ApiController
         }
 
         if (isset($all['getPercentage'])) {
-           $percentage = $model->avg('tbl.correct');
-             return $this->responseJson(round($percentage, 2));
+           $percentage = $model->pluck('tbl.correct');
+           $total = 0;
+           $totalCorrect = 0;
+           foreach ($percentage as $key => $value) {
+               $total += (int)$value;
+               $totalCorrect = (int)$value == 10 ? $totalCorrect+1 : $totalCorrect;
+           }
+           $avg = [];
+           $avg['avg'] = round($total / count($percentage), 2);
+           $avg['total'] = count($percentage);
+           $avg['all'] = $totalCorrect;
+           return $avg;
         }
         $model->selectRaw('tbl.*, tbl.created_at date');
         $model->orderBy($sort, $sortBy);
